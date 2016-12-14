@@ -8,18 +8,14 @@
 <body>
 
 	<div class="container" id="app">
-			<span class="error" v-show="!message">
-			 	You must enter a message
-			</span>
-		<form>
+			
+		<form action="done.html" v-on:submit.prevent="handleIt">
 			 
-			<textarea v-model="message"></textarea>
+			<button type="submit">
+				Click Here!
+			</button>
 		
 		</form>
-			<button type="submit" v-show="message">
-				Send message
-			</button>
-		<pre>{{ $data | json }}</pre>
 	</div>
 
 
@@ -28,9 +24,13 @@
 	<script> 
 		new Vue({
 			el: '#app',
-			data: {
-				message: ''
-			} 
+			
+			methods: {
+				handleIt: function() {
+					alert('Handled');
+
+				}
+			}
 		});
 	</script>
 </body>
