@@ -3,17 +3,23 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Vue Training</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
 
-	<div id="app">
-		<h1>{{ message }}</h1>
-
-		<input v-model="message">
-
-		<pre>
-			{{ $data | json }}
-		</pre>
+	<div class="container" id="app">
+			<span class="error" v-show="!message">
+			 	You must enter a message
+			</span>
+		<form>
+			 
+			<textarea v-model="message"></textarea>
+		
+		</form>
+			<button type="submit" v-show="message">
+				Send message
+			</button>
+		<pre>{{ $data | json }}</pre>
 	</div>
 
 
@@ -23,7 +29,7 @@
 		new Vue({
 			el: '#app',
 			data: {
-				message: 'Hello World'
+				message: ''
 			} 
 		});
 	</script>
