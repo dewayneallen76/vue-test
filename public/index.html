@@ -6,7 +6,16 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body class="container text-center">
-
+	<div>
+		<h1>Working with computed properties</h1>
+		<h1>{{ fullName }}</h1>
+		<input type="text" v-model="first" placeholder="First Name">
+		<input type="text" v-model="last" placeholder="Last Name">
+		<h1>Skill: {{ skill}}</h1>
+		<input type="text" v-model="points">
+	</div>
+	<hr>
+	<h1>Intro to components</h1>
 	<div id="app">
 		
 		<my-counter heading="Likes"></my-counter>
@@ -22,6 +31,28 @@
 
 	<script src="http://cdn.jsdelivr.net/vue/1.0.28/vue.js"></script>
 	<script> 
+		new Vue({
+			el: 'body', 
+			data: {
+				points: 50, 
+				first: 'Dewayne',
+				last: 'Allen',
+				fullName: 'Dewayne Allen'
+			},
+			computed: {
+				skill: function(){
+
+					if (this.points <= 100) {
+						return 'Beginner';
+					}
+					return 'Advanced';
+				},
+				fullName: function() {
+					return this.first + ' ' + this.last; 
+				}
+			}
+		})
+
 		Vue.component('my-counter', {
 			template: '#counter-template',
 			props: ['heading'],
