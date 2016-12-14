@@ -9,13 +9,11 @@
 
 	<div class="container" id="app">
 			
-		<form action="done.html" v-on:submit.prevent="handleIt">
 			 
-			<button type="submit">
-				Click Here!
+			<button type="submit" @click="updateCount">
+				Increment Counter: {{ count }}
 			</button>
 		
-		</form>
 	</div>
 
 
@@ -25,10 +23,13 @@
 		new Vue({
 			el: '#app',
 			
-			methods: {
-				handleIt: function() {
-					alert('Handled');
+			data: {
+				count: 0
+			}, 
 
+			methods: {
+				updateCount: function() {
+					this.count += 1;
 				}
 			}
 		});
