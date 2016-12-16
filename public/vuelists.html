@@ -10,15 +10,18 @@
 <body>
 	<div id="app">
 		<h1>List</h1>
+		<my-tasks :list="tasks"></my-tasks>
+	</div>
+	<template id="tasks-template">
 		<ul>
 			<li :class="{ 'completed' : task.completed }" 
-				v-for="task in tasks"
+				v-for="task in list"
 				@click="task.completed = ! task.completed"
 			>
 				{{ task.body }}
 			</li>
-		</ul>	
-	</div>
+		</ul>
+	</template>		
 	<script src="http://cdn.jsdelivr.net/vue/1.0.28/vue.js"></script>
 	<script src="/js/lists.js"></script>
 </body>

@@ -1,4 +1,8 @@
 console.log('connected');
+Vue.component('my-tasks', {
+	template: '#tasks-template',
+	props: ['list'],
+});
 
 new Vue({
 	el: '#app',
