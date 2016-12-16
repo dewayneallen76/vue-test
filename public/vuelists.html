@@ -4,11 +4,22 @@
 	<meta charset="UTF-8">
 	<title>Vue Lists</title>
 </head>
+<style>
+	.completed { text-decoration: line-through; }
+</style>
 <body>
 	<div id="app">
-		
+		<h1>List</h1>
+		<ul>
+			<li :class="{ 'completed' : task.completed }" 
+				v-for="task in tasks"
+				@click="toggleCompletedFor(task)"
+			>
+				{{ task.body }}
+			</li>
+		</ul>	
 	</div>
 	<script src="http://cdn.jsdelivr.net/vue/1.0.28/vue.js"></script>
-	<script src="js/lists.js"></script>
+	<script src="/js/lists.js"></script>
 </body>
 </html>

@@ -1,4 +1,19 @@
+console.log('connected');
+
 new Vue({
-	el: 'app',
+	el: '#app',
 	
+	data: {
+		tasks: [
+			{ body: 'Go to the store', completed: false },
+			{ body: 'Go to the bank', completed: false },
+			{ body: 'Go to the doctor', completed: false }
+		]
+	},
+
+	methods: {
+		toggleCompletedFor: function(task) {
+			task.completed = ! task.completed;
+		}
+	}
 })
