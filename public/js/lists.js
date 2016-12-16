@@ -9,11 +9,5 @@ new Vue({
 			{ body: 'Go to the bank', completed: false },
 			{ body: 'Go to the doctor', completed: false }
 		]
-	},
-
-	methods: {
-		toggleCompletedFor: function(task) {
-			task.completed = ! task.completed;
-		}
 	}
 })
