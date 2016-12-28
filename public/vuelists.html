@@ -3,18 +3,19 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Vue Lists</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <style>
 	.completed { text-decoration: line-through; }
 </style>
 <body>
-	<div id="app">
+	<div class="container" id="app">
 		<h1>List</h1>
 		<my-tasks :list="tasks"></my-tasks>
 	</div>
 	<template id="tasks-template">
-		<ul>
-			<li :class="{ 'completed' : task.completed }" 
+		<ul class="list-group">
+			<li class="list-group-item" :class="{ 'completed' : task.completed }" 
 				v-for="task in list"
 				@click="task.completed = ! task.completed"
 			>
