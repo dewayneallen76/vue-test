@@ -1,7 +1,24 @@
 console.log('connected');
+
 Vue.component('my-tasks', {
-	template: '#tasks-template',
 	props: ['list'],
+	template: '#tasks-template',
+	computed: {
+		remaining: function() {
+			return this.list.filter(this.inProgress).length;
+		}
+	},
+	methods: {
+		isCompleted: function(task) {
+			return task.completed;
+		},
+		inProgress: function(task) {
+			return ! this.isCompleted(task);
+		},
+		deleteTask: function(task) {
+			this.@remove(task);
+		}
+	}
 });
 
 new Vue({
@@ -14,4 +31,4 @@ new Vue({
 			{ body: 'Go to the doctor', completed: false }
 		]
 	}
-})
+});
