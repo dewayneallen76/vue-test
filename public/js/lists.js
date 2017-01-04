@@ -16,7 +16,7 @@ Vue.component('my-tasks', {
 			return ! this.isCompleted(task);
 		},
 		deleteTask: function(task) {
-			this.@remove(task);
+			this.list.$remove(task);
 		}
 	}
 });

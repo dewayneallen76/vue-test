@@ -13,8 +13,10 @@
 		<my-tasks :list="tasks"></my-tasks>
 	</div>
 	<template id="tasks-template">
-		<h1>To Do ({{ remaining }})</h1>
-		<ul class="list-group">
+		<h1>To Do 
+		<span v-show="remaining">({{ remaining }})</span>
+		</h1>
+		<ul v-show="list.length"class="list-group">
 			<li class="list-group-item" :class="{ 'completed' : task.completed }" 
 				v-for="task in list"
 				@click="task.completed = ! task.completed"
@@ -23,6 +25,7 @@
 				<strong @click="deleteTask(task)">X</strong>
 			</li>
 		</ul>
+		<p v-else>No Tasks!</p>
 	</template>		
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.8/vue.js"></script>
 	<script src="/js/lists.js"></script>
