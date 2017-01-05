@@ -13,9 +13,8 @@
 		<my-tasks :list="tasks"></my-tasks>
 	</div>
 	<template id="tasks-template">
-		<h1>To Do 
-		<span v-show="remaining">({{ remaining }})</span>
-		</h1>
+		<h1>To Do List</h1>
+		<h4 v-show="remaining">Remaining: {{ remaining }}</h4>
 		<ul v-show="list.length"class="list-group">
 			<li class="list-group-item" :class="{ 'completed' : task.completed }" 
 				v-for="task in list"
