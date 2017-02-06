@@ -3,11 +3,23 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" href="css/alert.css">
 </head>
 <body>
 	<alert type="success">
 		<strong>Success!</strong> Your account has been updated.
 	</alert>	
 	
+	<template id="alert-template">
+		<div class="Alert" v-show="show">
+			
+			<slot></slot>	
+			<span class="Alert__close" @click="show = false">X</span>
+		</div>
+		
+	</template>
+
+	<script src="http://cdn.jsdelivr.net/vue/1.0.28/vue.js"></script>
+	<script src="/js/alert.js"></script>
 </body>
 </html>
