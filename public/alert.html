@@ -6,12 +6,21 @@
 	<link rel="stylesheet" href="css/alert.css">
 </head>
 <body>
+
+	<alert>
+		<strong>General</strong> Your account has been updated.
+	</alert>	
+
+	<alert type="error">
+		<strong>Error!</strong> Your account has been updated.
+	</alert>	
+	
 	<alert type="success">
 		<strong>Success!</strong> Your account has been updated.
 	</alert>	
-	
+
 	<template id="alert-template">
-		<div class="Alert" v-show="show">
+		<div :class="alertClasses" v-show="show">
 			
 			<slot></slot>	
 			<span class="Alert__close" @click="show = false">X</span>
