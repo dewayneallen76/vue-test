@@ -1,0 +1,15 @@
+.Alert {
+	position: relative;
+	background: #ddd;
+	border: 1px solid;
+	padding: 1em;
+
+}
+
+.Alert__close {
+	position: absolute;
+	top: 1em;
+	right: 1em;
+	font-weight: bold;
+	cursor: pointer;
+}
