@@ -6,8 +6,12 @@
 
 }
 
-.Alert--Sucess {
-	background: lighten(green, 70%);
+.Alert--Success {
+	background: green;
+}
+
+.Alert--Error {
+	background: red;
 }
 
 .Alert__close {
