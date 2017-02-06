@@ -6,6 +6,10 @@
 
 }
 
+.Alert--Sucess {
+	background: lighten(green, 70%);
+}
+
 .Alert__close {
 	position: absolute;
 	top: 1em;
