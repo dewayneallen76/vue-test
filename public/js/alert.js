@@ -1,4 +1,4 @@
-console.log('connected');
+
 Vue.component('alert', {
 
 	template: '#alert-template',
